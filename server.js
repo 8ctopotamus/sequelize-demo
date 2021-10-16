@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use(routes)
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   console.log(`Sequelize connected!`)
   
   app.listen(PORT, () => console.log(`Server listening on http://localhost:${PORT}`))
